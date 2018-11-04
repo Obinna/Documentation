@@ -1,0 +1,1388 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     56645,       1380]
+NotebookOptionsPosition[     55699,       1356]
+NotebookOutlinePosition[     56053,       1372]
+CellTagsIndexPosition[     56010,       1369]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+This is based on a fix suggested in this \
+thread:https://mathematica.stackexchange.com/questions/143335/question-about-\
+changes-in-documentation-center-from-version-10-to-11\
+\>", "Text",
+ CellChangeTimes->{{3.750298404168046*^9, 
+  3.750298426653167*^9}},ExpressionUUID->"16b2de5b-b760-47d6-947d-\
+2d53ad6272e1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xPandBase", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "$UserBaseDirectory", ",", "\"\<Applications\>\"", ",", "\"\<xAct\>\"", 
+      ",", "\"\<xPand\>\"", ",", "\"\<Documentation\>\"", ",", 
+      "\"\<English\>\""}], "}"}], "]"}]}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"BrowserCategory", ",", "Item", ",", "Delimiter"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"BrowserCategory", "[", 
+      RowBox[{"name_", ",", "_", ",", "contents_"}], "]"}], ":=", 
+     RowBox[{"OpenerView", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"name", ",", 
+         RowBox[{"Column", "[", "contents", "]"}]}], "}"}], ",", "True"}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Options", "[", "Item", "]"}], "=", 
+     RowBox[{"{", 
+      RowBox[{"CopyTag", "\[Rule]", "None"}], "}"}]}], ";", 
+    RowBox[{
+     RowBox[{"Item", "[", 
+      RowBox[{"name_", ",", "nb_", ",", 
+       RowBox[{"opt", ":", 
+        RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ":=", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"OptionValue", "[", "CopyTag", "]"}], "===", "None"}], ",", 
+       RowBox[{"Hyperlink", "[", 
+        RowBox[{"name", ",", 
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{"xPandBase", ",", "nb"}], "}"}], "]"}]}], "]"}], ",", 
+       RowBox[{"Hyperlink", "[", 
+        RowBox[{"name", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"FileNameJoin", "[", 
+            RowBox[{"{", 
+             RowBox[{"xPandBase", ",", "nb"}], "}"}], "]"}], ",", 
+           RowBox[{"OptionValue", "[", "CopyTag", "]"}]}], "}"}]}], "]"}]}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Delimiter", ":=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0"}], "}"}]}], "}"}], "]"}], "}"}], ",", 
+       RowBox[{"AspectRatio", "\[Rule]", 
+        RowBox[{"1", "/", "20"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Get", "@", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"xPandBase", ",", "\"\<BrowserCategories.m\>\""}], "}"}], 
+      "]"}]}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.750297681094511*^9, 3.75029768110697*^9}, {
+   3.750298225438387*^9, 3.750298247789044*^9}, 3.750298442798916*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"0b6ca155-2f7e-4361-ac2f-53ef7d72cf27"],
+
+Cell[BoxData["\<\"/Users/o-admin/Library/Mathematica/Applications/xAct/xPand/\
+Documentation/English\"\>"], "Output",
+ CellChangeTimes->{3.75029768423812*^9, 3.750298456193668*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"31ce6b44-c6af-4642-9ee2-41cbfc68518a"],
+
+Cell[BoxData[
+ TagBox[
+  DynamicModuleBox[{Typeset`var$$ = True}, 
+   InterpretationBox[
+    StyleBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         OpenerBox[Dynamic[Typeset`var$$],
+          Appearance->Automatic,
+          AutoAction->False,
+          ContinuousAction->False,
+          Enabled->Automatic], "\<\"xAct Packages\"\>"}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxBackground->{"Columns" -> {{Automatic}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+      GridBox[{
+        {
+         OpenerBox[Dynamic[Typeset`var$$],
+          Appearance->Automatic,
+          AutoAction->False,
+          ContinuousAction->False,
+          Enabled->Automatic], "\<\"xAct Packages\"\>"},
+        {"", 
+         PaneBox[
+          TagBox[GridBox[{
+             {
+              TagBox[
+               DynamicModuleBox[{Typeset`var$$ = True}, 
+                InterpretationBox[
+                 StyleBox[
+                  PaneSelectorBox[{False->GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xPand\"\>"}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+                   GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xPand\"\>"},
+                    {"", 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    TemplateBox[{
+                    "\"xPandDoc\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+xPand/Documentation/English/xPandDoc.nb", None},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+xPand/Documentation/English/xPandDoc.nb"},
+                    "HyperlinkDefault"]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Column"],
+                    ImageMargins->0]}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+                   Typeset`var$$],
+                   Alignment->Automatic,
+                   BaseStyle->{},
+                   BaselinePosition->Baseline,
+                   DefaultBaseStyle->"OpenerView",
+                   ImageMargins->0,
+                   ImageSize->Automatic],
+                  Deployed->False,
+                  StripOnInput->False],
+                 OpenerView[{"xPand", 
+                   Column[{
+                    Hyperlink[
+                    "xPandDoc", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+xPand/Documentation/English/xPandDoc.nb"]}]}, True]],
+                DynamicModuleValues:>{}],
+               Setting[#, {0}]& ]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+           "Column"],
+          ImageMargins->0]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxBackground->{"Columns" -> {{Automatic}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+      Typeset`var$$],
+      Alignment->Automatic,
+      BaseStyle->{},
+      BaselinePosition->Baseline,
+      DefaultBaseStyle->"OpenerView",
+      ImageMargins->0,
+      ImageSize->Automatic],
+     Deployed->False,
+     StripOnInput->False],
+    OpenerView[{"xAct Packages", 
+      Column[{
+        OpenerView[{"xPand", 
+          Column[{
+            Hyperlink[
+            "xPandDoc", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/xPand/\
+Documentation/English/xPandDoc.nb"]}]}, True]}]}, True]],
+   DynamicModuleValues:>{}],
+  Setting[#, {0}]& ]], "Output",
+ CellChangeTimes->{3.75029768423812*^9, 3.750298456259096*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"dba1fb8d-7220-4f58-ad87-38a54fb3275a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xActBase", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "$UserBaseDirectory", ",", "\"\<Applications\>\"", ",", "\"\<xAct\>\"", 
+      ",", "\"\<Documentation\>\"", ",", "\"\<English\>\""}], "}"}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"BrowserCategory", ",", "Item", ",", "Delimiter"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"BrowserCategory", "[", 
+      RowBox[{"name_", ",", "_", ",", "contents_"}], "]"}], ":=", 
+     RowBox[{"OpenerView", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"name", ",", 
+         RowBox[{"Column", "[", "contents", "]"}]}], "}"}], ",", "True"}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Options", "[", "Item", "]"}], "=", 
+     RowBox[{"{", 
+      RowBox[{"CopyTag", "\[Rule]", "None"}], "}"}]}], ";", 
+    RowBox[{
+     RowBox[{"Item", "[", 
+      RowBox[{"name_", ",", "nb_", ",", 
+       RowBox[{"opt", ":", 
+        RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ":=", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"OptionValue", "[", "CopyTag", "]"}], "===", "None"}], ",", 
+       RowBox[{"Hyperlink", "[", 
+        RowBox[{"name", ",", 
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{"xActBase", ",", "nb"}], "}"}], "]"}]}], "]"}], ",", 
+       RowBox[{"Hyperlink", "[", 
+        RowBox[{"name", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"FileNameJoin", "[", 
+            RowBox[{"{", 
+             RowBox[{"xActBase", ",", "nb"}], "}"}], "]"}], ",", 
+           RowBox[{"OptionValue", "[", "CopyTag", "]"}]}], "}"}]}], "]"}]}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Delimiter", ":=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0"}], "}"}]}], "}"}], "]"}], "}"}], ",", 
+       RowBox[{"AspectRatio", "\[Rule]", 
+        RowBox[{"1", "/", "20"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Get", "@", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"xActBase", ",", "\"\<BrowserCategories.m\>\""}], "}"}], 
+      "]"}]}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.750297756132106*^9, 3.750297762591051*^9}, 
+   3.750297810270471*^9, {3.750298213816131*^9, 3.750298264317067*^9}, 
+   3.750298450781163*^9},
+ CellLabel->"In[3]:=",ExpressionUUID->"1dd6a015-e7f2-40cc-938f-638f45ab1485"],
+
+Cell[BoxData["\<\"/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English\"\>"], "Output",
+ CellChangeTimes->{3.750297774115896*^9, 3.750297820007576*^9, 
+  3.750298480800511*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"9fb0778d-081b-43d1-96b5-0a916add95c2"],
+
+Cell[BoxData[
+ TagBox[
+  DynamicModuleBox[{Typeset`var$$ = True}, 
+   InterpretationBox[
+    StyleBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         OpenerBox[Dynamic[Typeset`var$$],
+          Appearance->Automatic,
+          AutoAction->False,
+          ContinuousAction->False,
+          Enabled->Automatic], "\<\"xAct Packages\"\>"}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxBackground->{"Columns" -> {{Automatic}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+      GridBox[{
+        {
+         OpenerBox[Dynamic[Typeset`var$$],
+          Appearance->Automatic,
+          AutoAction->False,
+          ContinuousAction->False,
+          Enabled->Automatic], "\<\"xAct Packages\"\>"},
+        {"", 
+         PaneBox[
+          TagBox[GridBox[{
+             {
+              TagBox[
+               DynamicModuleBox[{Typeset`var$$ = True}, 
+                InterpretationBox[
+                 StyleBox[
+                  PaneSelectorBox[{False->GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xCore\"\>"}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+                   GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xCore\"\>"},
+                    {"", 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    TemplateBox[{
+                    "\"xCoreDoc\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xCoreDoc.nb", None},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xCoreDoc.nb"},
+                    "HyperlinkDefault"]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Column"],
+                    ImageMargins->0]}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+                   Typeset`var$$],
+                   Alignment->Automatic,
+                   BaseStyle->{},
+                   BaselinePosition->Baseline,
+                   DefaultBaseStyle->"OpenerView",
+                   ImageMargins->0,
+                   ImageSize->Automatic],
+                  Deployed->False,
+                  StripOnInput->False],
+                 OpenerView[{"xCore", 
+                   Column[{
+                    Hyperlink[
+                    "xCoreDoc", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xCoreDoc.nb"]}]}, True]],
+                DynamicModuleValues:>{}],
+               Setting[#, {0}]& ]},
+             {
+              TagBox[
+               DynamicModuleBox[{Typeset`var$$ = True}, 
+                InterpretationBox[
+                 StyleBox[
+                  PaneSelectorBox[{False->GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xPerm\"\>"}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+                   GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xPerm\"\>"},
+                    {"", 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    TemplateBox[{
+                    "\"xPermDoc\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xPermDoc.nb", None},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xPermDoc.nb"},
+                    "HyperlinkDefault"]},
+                    {
+                    
+                    TemplateBox[{
+                    "\"Examples in Butler's book\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/ButlerExamples.nb", None},
+                    
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/ButlerExamples.nb"},
+                    "HyperlinkDefault"]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Column"],
+                    ImageMargins->0]}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+                   Typeset`var$$],
+                   Alignment->Automatic,
+                   BaseStyle->{},
+                   BaselinePosition->Baseline,
+                   DefaultBaseStyle->"OpenerView",
+                   ImageMargins->0,
+                   ImageSize->Automatic],
+                  Deployed->False,
+                  StripOnInput->False],
+                 OpenerView[{"xPerm", 
+                   Column[{
+                    Hyperlink[
+                    "xPermDoc", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xPermDoc.nb"], 
+                    Hyperlink[
+                    "Examples in Butler's book", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/ButlerExamples.nb"]}]}, True]],
+                DynamicModuleValues:>{}],
+               Setting[#, {0}]& ]},
+             {
+              TagBox[
+               DynamicModuleBox[{Typeset`var$$ = True}, 
+                InterpretationBox[
+                 StyleBox[
+                  PaneSelectorBox[{False->GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xTensor\"\>"}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+                   GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xTensor\"\>"},
+                    {"", 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    TemplateBox[{
+                    "\"xTensorDoc\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorDoc.nb", None},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorDoc.nb"},
+                    "HyperlinkDefault"]},
+                    {
+                    ItemBox[
+                    GraphicsBox[LineBox[{{0, 0}, {1, 0}}],
+                    AspectRatio->NCache[
+                    Rational[1, 20], 0.05]],
+                    StripOnInput->False]},
+                    {
+                    
+                    TemplateBox[{
+                    "\"Loading\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Loading"},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb"},
+                    "HyperlinkDefault"]},
+                    {
+                    
+                    TemplateBox[{
+                    "\"Symbols and types\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Symbols and types"},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb"},
+                    "HyperlinkDefault"]},
+                    {
+                    
+                    TemplateBox[{
+                    "\"Generalized indices\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Generalized indices"},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb"},
+                    "HyperlinkDefault"]},
+                    {
+                    
+                    TemplateBox[{
+                    "\"Formatting of indexed objects\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Formatting of indexed objects"},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb"},
+                    "HyperlinkDefault"]},
+                    {
+                    
+                    TemplateBox[{
+                    "\"Mathematical entities\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Mathematical entities"},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb"},
+                    "HyperlinkDefault"]},
+                    {
+                    
+                    TemplateBox[{
+                    "\"Input expressions\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Input expressions"},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb"},
+                    "HyperlinkDefault"]},
+                    {
+                    
+                    TemplateBox[{
+                    "\"Rules\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Rules"},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb"},
+                    "HyperlinkDefault"]},
+                    {
+                    
+                    TemplateBox[{
+                    "\"Manipulation of input\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Manipulation of input"},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb"},
+                    "HyperlinkDefault"]},
+                    {
+                    ItemBox[
+                    GraphicsBox[LineBox[{{0, 0}, {1, 0}}],
+                    AspectRatio->NCache[
+                    Rational[1, 20], 0.05]],
+                    StripOnInput->False]},
+                    {
+                    
+                    TemplateBox[{
+                    "\"List of commands\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "List of commands"},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb"},
+                    "HyperlinkDefault"]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Column"],
+                    ImageMargins->0]}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+                   Typeset`var$$],
+                   Alignment->Automatic,
+                   BaseStyle->{},
+                   BaselinePosition->Baseline,
+                   DefaultBaseStyle->"OpenerView",
+                   ImageMargins->0,
+                   ImageSize->Automatic],
+                  Deployed->False,
+                  StripOnInput->False],
+                 OpenerView[{"xTensor", 
+                   Column[{
+                    Hyperlink[
+                    "xTensorDoc", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorDoc.nb"], 
+                    Item[
+                    Graphics[{
+                    Line[{{0, 0}, {1, 0}}]}, AspectRatio -> Rational[1, 20]]], 
+                    Hyperlink[
+                    "Loading", {
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Loading"}], 
+                    Hyperlink[
+                    "Symbols and types", {
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Symbols and types"}], 
+                    Hyperlink[
+                    "Generalized indices", {
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Generalized indices"}], 
+                    Hyperlink[
+                    "Formatting of indexed objects", {
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Formatting of indexed objects"}], 
+                    
+                    Hyperlink[
+                    "Mathematical entities", {
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Mathematical entities"}], 
+                    Hyperlink[
+                    "Input expressions", {
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Input expressions"}], 
+                    Hyperlink[
+                    "Rules", {
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Rules"}], 
+                    Hyperlink[
+                    "Manipulation of input", {
+                    
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Manipulation of input"}], 
+                    Item[
+                    Graphics[{
+                    Line[{{0, 0}, {1, 0}}]}, AspectRatio -> Rational[1, 20]]], 
+                    Hyperlink[
+                    "List of commands", {
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "List of commands"}]}]}, True]],
+                DynamicModuleValues:>{}],
+               Setting[#, {0}]& ]},
+             {
+              TagBox[
+               DynamicModuleBox[{Typeset`var$$ = True}, 
+                InterpretationBox[
+                 StyleBox[
+                  PaneSelectorBox[{False->GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xCoba\"\>"}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+                   GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xCoba\"\>"},
+                    {"", 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    TemplateBox[{
+                    "\"xCoba\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xCobaDoc.nb", None},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xCobaDoc.nb"},
+                    "HyperlinkDefault"]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Column"],
+                    ImageMargins->0]}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+                   Typeset`var$$],
+                   Alignment->Automatic,
+                   BaseStyle->{},
+                   BaselinePosition->Baseline,
+                   DefaultBaseStyle->"OpenerView",
+                   ImageMargins->0,
+                   ImageSize->Automatic],
+                  Deployed->False,
+                  StripOnInput->False],
+                 OpenerView[{"xCoba", 
+                   Column[{
+                    Hyperlink[
+                    "xCoba", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xCobaDoc.nb"]}]}, True]],
+                DynamicModuleValues:>{}],
+               Setting[#, {0}]& ]},
+             {
+              TagBox[
+               DynamicModuleBox[{Typeset`var$$ = True}, 
+                InterpretationBox[
+                 StyleBox[
+                  PaneSelectorBox[{False->GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"Invar\"\>"}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+                   GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"Invar\"\>"},
+                    {"", 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    TemplateBox[{
+                    "\"InvarDoc\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/InvarDoc.nb", None},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/InvarDoc.nb"},
+                    "HyperlinkDefault"]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Column"],
+                    ImageMargins->0]}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+                   Typeset`var$$],
+                   Alignment->Automatic,
+                   BaseStyle->{},
+                   BaselinePosition->Baseline,
+                   DefaultBaseStyle->"OpenerView",
+                   ImageMargins->0,
+                   ImageSize->Automatic],
+                  Deployed->False,
+                  StripOnInput->False],
+                 OpenerView[{"Invar", 
+                   Column[{
+                    Hyperlink[
+                    "InvarDoc", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/InvarDoc.nb"]}]}, True]],
+                DynamicModuleValues:>{}],
+               Setting[#, {0}]& ]},
+             {
+              TagBox[
+               DynamicModuleBox[{Typeset`var$$ = True}, 
+                InterpretationBox[
+                 StyleBox[
+                  PaneSelectorBox[{False->GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"Spinors\"\>"}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+                   GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"Spinors\"\>"},
+                    {"", 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    TemplateBox[{
+                    "\"SpinorsDoc\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/SpinorsDoc.nb", None},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/SpinorsDoc.nb"},
+                    "HyperlinkDefault"]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Column"],
+                    ImageMargins->0]}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+                   Typeset`var$$],
+                   Alignment->Automatic,
+                   BaseStyle->{},
+                   BaselinePosition->Baseline,
+                   DefaultBaseStyle->"OpenerView",
+                   ImageMargins->0,
+                   ImageSize->Automatic],
+                  Deployed->False,
+                  StripOnInput->False],
+                 OpenerView[{"Spinors", 
+                   Column[{
+                    Hyperlink[
+                    "SpinorsDoc", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/SpinorsDoc.nb"]}]}, True]],
+                DynamicModuleValues:>{}],
+               Setting[#, {0}]& ]},
+             {
+              TagBox[
+               DynamicModuleBox[{Typeset`var$$ = True}, 
+                InterpretationBox[
+                 StyleBox[
+                  PaneSelectorBox[{False->GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"Harmonics\"\>"}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+                   GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"Harmonics\"\>"},
+                    {"", 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    TemplateBox[{
+                    "\"HarmonicsDoc\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/HarmonicsDoc.nb", None},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/HarmonicsDoc.nb"},
+                    "HyperlinkDefault"]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Column"],
+                    ImageMargins->0]}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+                   Typeset`var$$],
+                   Alignment->Automatic,
+                   BaseStyle->{},
+                   BaselinePosition->Baseline,
+                   DefaultBaseStyle->"OpenerView",
+                   ImageMargins->0,
+                   ImageSize->Automatic],
+                  Deployed->False,
+                  StripOnInput->False],
+                 OpenerView[{"Harmonics", 
+                   Column[{
+                    Hyperlink[
+                    "HarmonicsDoc", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/HarmonicsDoc.nb"]}]}, True]],
+                DynamicModuleValues:>{}],
+               Setting[#, {0}]& ]},
+             {
+              TagBox[
+               DynamicModuleBox[{Typeset`var$$ = True}, 
+                InterpretationBox[
+                 StyleBox[
+                  PaneSelectorBox[{False->GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xPert\"\>"}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+                   GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xPert\"\>"},
+                    {"", 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    TemplateBox[{
+                    "\"xPertDoc\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xPertDoc.nb", None},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xPertDoc.nb"},
+                    "HyperlinkDefault"]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Column"],
+                    ImageMargins->0]}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+                   Typeset`var$$],
+                   Alignment->Automatic,
+                   BaseStyle->{},
+                   BaselinePosition->Baseline,
+                   DefaultBaseStyle->"OpenerView",
+                   ImageMargins->0,
+                   ImageSize->Automatic],
+                  Deployed->False,
+                  StripOnInput->False],
+                 OpenerView[{"xPert", 
+                   Column[{
+                    Hyperlink[
+                    "xPertDoc", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xPertDoc.nb"]}]}, True]],
+                DynamicModuleValues:>{}],
+               Setting[#, {0}]& ]},
+             {
+              TagBox[
+               DynamicModuleBox[{Typeset`var$$ = True}, 
+                InterpretationBox[
+                 StyleBox[
+                  PaneSelectorBox[{False->GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xPand\"\>"}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}], True->
+                   GridBox[{
+                    {
+                    OpenerBox[Dynamic[Typeset`var$$],
+                    Appearance->Automatic,
+                    AutoAction->False,
+                    ContinuousAction->False,
+                    Enabled->Automatic], "\<\"xPand\"\>"},
+                    {"", 
+                    PaneBox[
+                    TagBox[GridBox[{
+                    {
+                    
+                    TemplateBox[{
+                    "\"xPandDoc\"",{
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/../../xPand/Documentation/English/xPandDoc.nb", None},
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/../../xPand/Documentation/English/xPandDoc.nb"},
+                    "HyperlinkDefault"]}
+                    },
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                    "Column"],
+                    ImageMargins->0]}
+                    },
+                    AutoDelete->False,
+                    BaselinePosition->{1, 1},
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    GridBoxBackground->{"Columns" -> {{Automatic}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                    
+                    GridBoxSpacings->{
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+                   Typeset`var$$],
+                   Alignment->Automatic,
+                   BaseStyle->{},
+                   BaselinePosition->Baseline,
+                   DefaultBaseStyle->"OpenerView",
+                   ImageMargins->0,
+                   ImageSize->Automatic],
+                  Deployed->False,
+                  StripOnInput->False],
+                 OpenerView[{"xPand", 
+                   Column[{
+                    Hyperlink[
+                    "xPandDoc", 
+                    "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/../../xPand/Documentation/English/xPandDoc.nb"]}]}, 
+                  True]],
+                DynamicModuleValues:>{}],
+               Setting[#, {0}]& ]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+           "Column"],
+          ImageMargins->0]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxBackground->{"Columns" -> {{Automatic}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {{0.2}}, "Rows" -> {{0.5}}}]}, Dynamic[
+      Typeset`var$$],
+      Alignment->Automatic,
+      BaseStyle->{},
+      BaselinePosition->Baseline,
+      DefaultBaseStyle->"OpenerView",
+      ImageMargins->0,
+      ImageSize->Automatic],
+     Deployed->False,
+     StripOnInput->False],
+    OpenerView[{"xAct Packages", 
+      Column[{
+        OpenerView[{"xCore", 
+          Column[{
+            Hyperlink[
+            "xCoreDoc", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xCoreDoc.nb"]}]}, True], 
+        OpenerView[{"xPerm", 
+          Column[{
+            Hyperlink[
+            "xPermDoc", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xPermDoc.nb"], 
+            Hyperlink[
+            "Examples in Butler's book", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/ButlerExamples.nb"]}]}, True], 
+        OpenerView[{"xTensor", 
+          Column[{
+            Hyperlink[
+            "xTensorDoc", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorDoc.nb"], 
+            Item[
+             Graphics[{
+               Line[{{0, 0}, {1, 0}}]}, AspectRatio -> Rational[1, 20]]], 
+            Hyperlink[
+            "Loading", {
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Loading"}], 
+            Hyperlink[
+            "Symbols and types", {
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Symbols and types"}], 
+            Hyperlink[
+            "Generalized indices", {
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Generalized indices"}], 
+            Hyperlink[
+            "Formatting of indexed objects", {
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Formatting of indexed objects"}], 
+            
+            Hyperlink[
+            "Mathematical entities", {
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Mathematical entities"}], 
+            Hyperlink[
+            "Input expressions", {
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Input expressions"}], 
+            Hyperlink[
+            "Rules", {
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Rules"}], 
+            Hyperlink[
+            "Manipulation of input", {
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "Manipulation of input"}], 
+            Item[
+             Graphics[{
+               Line[{{0, 0}, {1, 0}}]}, AspectRatio -> Rational[1, 20]]], 
+            Hyperlink[
+            "List of commands", {
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xTensorRefGuide.nb", "List of commands"}]}]}, True], 
+        OpenerView[{"xCoba", 
+          Column[{
+            Hyperlink[
+            "xCoba", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xCobaDoc.nb"]}]}, True], 
+        OpenerView[{"Invar", 
+          Column[{
+            Hyperlink[
+            "InvarDoc", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/InvarDoc.nb"]}]}, True], 
+        OpenerView[{"Spinors", 
+          Column[{
+            Hyperlink[
+            "SpinorsDoc", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/SpinorsDoc.nb"]}]}, True], 
+        OpenerView[{"Harmonics", 
+          Column[{
+            Hyperlink[
+            "HarmonicsDoc", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/HarmonicsDoc.nb"]}]}, True], 
+        OpenerView[{"xPert", 
+          Column[{
+            Hyperlink[
+            "xPertDoc", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/xPertDoc.nb"]}]}, True], 
+        OpenerView[{"xPand", 
+          Column[{
+            Hyperlink[
+            "xPandDoc", 
+             "/Users/o-admin/Library/Mathematica/Applications/xAct/\
+Documentation/English/../../xPand/Documentation/English/xPandDoc.nb"]}]}, 
+         True]}]}, True]],
+   DynamicModuleValues:>{}],
+  Setting[#, {0}]& ]], "Output",
+ CellChangeTimes->{3.750297774115896*^9, 3.750297820007576*^9, 
+  3.7502984808139553`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"dda19ee1-d56a-42b2-a716-ea34d94cbdf4"]
+}, Open  ]]
+},
+WindowSize->{808, 677},
+WindowMargins->{{20, Automatic}, {Automatic, 44}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 7, 81, "Text",ExpressionUUID->"16b2de5b-b760-47d6-947d-2d53ad6272e1"],
+Cell[CellGroupData[{
+Cell[908, 31, 2693, 70, 262, "Input",ExpressionUUID->"0b6ca155-2f7e-4361-ac2f-53ef7d72cf27"],
+Cell[3604, 103, 258, 3, 34, "Output",ExpressionUUID->"31ce6b44-c6af-4642-9ee2-41cbfc68518a"],
+Cell[3865, 108, 5603, 144, 85, "Output",ExpressionUUID->"dba1fb8d-7220-4f58-ad87-38a54fb3275a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9505, 257, 2690, 71, 241, "Input",ExpressionUUID->"1dd6a015-e7f2-40cc-938f-638f45ab1485"],
+Cell[12198, 330, 278, 4, 34, "Output",ExpressionUUID->"9fb0778d-081b-43d1-96b5-0a916add95c2"],
+Cell[12479, 336, 43204, 1017, 749, "Output",ExpressionUUID->"dda19ee1-d56a-42b2-a716-ea34d94cbdf4"]
+}, Open  ]]
+}
+]
+*)
+
